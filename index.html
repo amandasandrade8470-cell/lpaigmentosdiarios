@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>GHOST Soluções Automotivas | Tecnologia Automotiva</title>
+
+  <meta
+    name="description"
+    content="GHOST Soluções Automotivas — tecnologia, eletrônica, painéis digitais, acessórios e soluções para veículos."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --green: #00a859;
+      --green-dark: #006b3c;
+      --yellow: #ffd500;
+      --blue: #0755b5;
+      --blue-dark: #03152f;
+      --black: #05080d;
+      --white: #fff;
+      --gray: #f3f6f8;
+      --text: #17202a;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(3, 21, 47, .97);
+      border-bottom: 3px solid var(--yellow);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 25px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      color: white;
+      font-weight: 900;
+      font-size: 1.5rem;
+      letter-spacing: 2px;
+    }
+
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 10px;
+
+      background: var(--yellow);
+      color: var(--blue-dark);
+
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--yellow);
+    }
+
+    /* STRIPE */
+
+    .stripe {
+      height: 6px;
+
+      background: linear-gradient(
+        90deg,
+        var(--green) 0 33%,
+        var(--yellow) 33% 66%,
+        var(--blue) 66% 100%
+      );
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 680px;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+      overflow: hidden;
+
+      color: white;
+
+      background:
+        radial-gradient(
+          circle at 85% 30%,
+          rgba(0,168,89,.25),
+          transparent 30%
+        ),
+        linear-gradient(
+          120deg,
+          #020a16,
+          #03152f 60%,
+          #061f45
+        );
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 600px;
+      height: 600px;
+
+      right: -250px;
+      top: -180px;
+
+      border: 2px solid rgba(255,213,0,.12);
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 0 80px rgba(255,213,0,.03),
+        0 0 0 160px rgba(0,168,89,.025);
+    }
+
+    .hero::after {
+      content: "GHOST";
+
+      position: absolute;
+      right: -70px;
+      bottom: -100px;
+
+      font-size: 12rem;
+      font-weight: 900;
+
+      color: rgba(255,255,255,.025);
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 1200px;
+
+      margin: auto;
+
+      padding: 90px 25px;
+
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-block;
+
+      padding: 8px 17px;
+
+      border-radius: 30px;
+
+      background: var(--yellow);
+      color: var(--blue-dark);
+
+      font-size: .82rem;
+      font-weight: 900;
+
+      text-transform: uppercase;
+
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      max-width: 950px;
+
+      font-size: clamp(3rem, 7vw, 6rem);
+
+      line-height: .98;
+
+      text-transform: uppercase;
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+    }
+
+    .hero p {
+      max-width: 700px;
+
+      color: #cbd7e8;
+
+      font-size: 1.2rem;
+
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+
+      padding: 15px 25px;
+
+      border-radius: 7px;
+
+      font-weight: 900;
+
+      text-transform: uppercase;
+
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--blue-dark);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 12px 30px rgba(255,213,0,.25);
+    }
+
+    .btn-outline {
+      color: white;
+
+      border: 2px solid white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: var(--blue-dark);
+    }
+
+    /* SEÇÕES */
+
+    section {
+      padding: 85px 25px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title span {
+      color: var(--green);
+
+      font-size: .85rem;
+      font-weight: 900;
+
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-title h2 {
+      color: var(--blue-dark);
+
+      font-size: clamp(2rem, 4vw, 3rem);
+
+      margin-top: 7px;
+    }
+
+    .section-title p {
+      max-width: 700px;
+
+      margin: 12px auto 0;
+
+      color: #687385;
+    }
+
+    /* PRODUTOS */
+
+    .products {
+      background: var(--gray);
+    }
+
+    .cards {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+
+      padding: 32px;
+
+      border-radius: 14px;
+
+      border-top: 4px solid var(--green);
+
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 18px 40px rgba(0,0,0,.12);
+    }
+
+    .icon {
+      width: 60px;
+      height: 60px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 12px;
+
+      background: #e7f7ef;
+
+      color: var(--green);
+
+      font-size: 28px;
+
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      color: var(--blue-dark);
+
+      font-size: 1.25rem;
+
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #687385;
+    }
+
+    /* SOBRE */
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    .about-box {
+      min-height: 390px;
+
+      padding: 50px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      color: white;
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #006b3c,
+          #03152f
+        );
+
+      position: relative;
+
+      overflow: hidden;
+    }
+
+    .about-box::after {
+      content: "R4";
+
+      position: absolute;
+
+      right: -25px;
+      bottom: -80px;
+
+      font-size: 15rem;
+      font-weight: 900;
+
+      color: rgba(255,255,255,.035);
+    }
+
+    .about-box h3 {
+      color: var(--yellow);
+
+      font-size: 3rem;
+
+      margin-bottom: 15px;
+    }
+
+    .about-box .tech {
+      color: #cce8dc;
+
+      font-weight: bold;
+    }
+
+    .about-text h2 {
+      color: var(--blue-dark);
+
+      font-size: 2.7rem;
+
+      line-height: 1.05;
+
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #59636e;
+
+      margin-bottom: 15px;
+    }
+
+    .values {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 15px;
+
+      margin-top: 25px;
+    }
+
+    .value {
+      padding: 15px;
+
+      border-left: 4px solid var(--yellow);
+
+      background: #fafafa;
+
+      font-weight: bold;
+    }
+
+    /* TECNOLOGIA */
+
+    .technology {
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #020a16,
+          #03152f
+        );
+    }
+
+    .technology .section-title h2 {
+      color: white;
+    }
+
+    .technology .section-title p {
+      color: #b8c7dc;
+    }
+
+    .tech-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 25px;
+    }
+
+    .tech-card {
+      padding: 30px;
+
+      border-radius: 14px;
+
+      border: 1px solid rgba(255,255,255,.08);
+
+      background: rgba(255,255,255,.04);
+
+      transition: .3s;
+    }
+
+    .tech-card:hover {
+      border-color: var(--yellow);
+
+      transform: translateY(-5px);
+    }
+
+    .tech-card strong {
+      display: block;
+
+      color: var(--yellow);
+
+      font-size: 1.1rem;
+
+      margin-bottom: 8px;
+    }
+
+    .tech-card p {
+      color: #b8c7dc;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          120deg,
+          var(--green-dark),
+          var(--blue-dark)
+        );
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem,5vw,3.5rem);
+
+      margin-bottom: 15px;
+    }
+
+    .cta h2 span {
+      color: var(--yellow);
+    }
+
+    .cta p {
+      max-width: 700px;
+
+      margin: 0 auto 30px;
+
+      color: #dbe5f5;
+    }
+
+    /* CONTATO */
+
+    .contact {
+      background: var(--gray);
+    }
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 25px;
+    }
+
+    .contact-card {
+      padding: 30px;
+
+      background: white;
+
+      border-radius: 15px;
+
+      text-align: center;
+
+      box-shadow: 0 8px 25px rgba(0,0,0,.05);
+    }
+
+    .contact-card .icon {
+      margin: 0 auto 15px;
+    }
+
+    .contact-card h3 {
+      color: var(--blue-dark);
+
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: #687385;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 45px 25px 25px;
+
+      background: #010812;
+
+      color: white;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+
+      margin: auto;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      max-width: 500px;
+    }
+
+    .footer-brand h3 {
+      color: var(--yellow);
+
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p,
+    .footer-info {
+      color: #9eacc0;
+    }
+
+    .copyright {
+      max-width: 1200px;
+
+      margin: 30px auto 0;
+
+      padding-top: 20px;
+
+      border-top: 1px solid rgba(255,255,255,.1);
+
+      color: #68778e;
+
+      font-size: .85rem;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+
+      right: 25px;
+      bottom: 25px;
+
+      width: 62px;
+      height: 62px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #25d366;
+
+      color: white;
+
+      font-size: 28px;
+      font-weight: 900;
+
+      box-shadow: 0 8px 25px rgba(0,0,0,.3);
+
+      z-index: 999;
+
+      transition: .3s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.1);
+    }
+
+    /* RESPONSIVO */
+
+    @media (max-width: 850px) {
+
+      nav {
+        display: none;
+      }
+
+      .cards,
+      .tech-grid,
+      .contact-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      section {
+        padding: 60px 20px;
+      }
+
+      .hero-content {
+        padding: 60px 20px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+      }
+
+      .values {
+        grid-template-columns: 1fr;
+      }
+
+      .about-box {
+        padding: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="nav">
+
+      <a href="#inicio" class="logo">
+
+        <div class="logo-icon">
+          GH
+        </div>
+
+        GHOST
+
+      </a>
+
+      <nav>
+        <a href="#inicio">Início</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#empresa">Empresa</a>
+        <a href="#tecnologia">Tecnologia</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+  <div class="stripe"></div>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero" id="inicio">
+
+      <div class="hero-content">
+
+        <div class="badge">
+          🇧🇷 Tecnologia Automotiva
+        </div>
+
+        <h1>
+          Tecnologia que
+          <span>transforma</span>
+          seu carro.
+        </h1>
+
+        <p>
+          Soluções eletrônicas e acessórios automotivos
+          desenvolvidos para levar mais tecnologia,
+          informação e personalidade aos veículos.
+        </p>
+
+        <div class="buttons">
+
+          <a
+            href="https://wa.me/5567992629793"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            Falar com a GHOST
+          </a>
+
+          <a
+            href="#produtos"
+            class="btn btn-outline"
+          >
+            Conhecer produtos
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRODUTOS -->
+
+    <section class="products" id="produtos">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <span>
+            Soluções automotivas
+          </span>
+
+          <h2>
+            Produtos & Serviços
+          </h2>
+
+          <p>
+            Tecnologia, eletrônica e soluções
+            desenvolvidas para o mercado automotivo.
+          </p>
+
+        </div>
+
+
+        <div class="cards">
+
+          <div class="card">
+
+            <div class="icon">
+              📊
+            </div>
+
+            <h3>
+              Painéis Digitais
+            </h3>
+
+            <p>
+              Painéis digitais universais e soluções
+              eletrônicas para modernizar o interior
+              do veículo.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="icon">
+              ⚡
+            </div>
+
+            <h3>
+              Eletrônica Automotiva
+            </h3>
+
+            <p>
+              Desenvolvimento e fabricação de
+              equipamentos elétricos e eletrônicos
+              para veículos.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="icon">
+              🚗
+            </div>
+
+            <h3>
+              Acessórios Automotivos
+            </h3>
+
+            <p>
+              Soluções e acessórios para melhorar
+              tecnologia, funcionalidade e experiência.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="icon">
+              🔧
+            </div>
+
+            <h3>
+              Instalação
+            </h3>
+
+            <p>
+              Serviços de instalação, manutenção
+              e reparação de acessórios automotivos.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="icon">
+              🧩
+            </div>
+
+            <h3>
+              Peças Automotivas
+            </h3>
+
+            <p>
+              Comércio de peças e acessórios novos
+              para veículos automotores.
+            </p>
+
+          </div>
+
+
+          <div class="card">
+
+            <div class="icon">
+              💻
+            </div>
+
+            <h3>
+              Tecnologia
+            </h3>
+
+            <p>
+              Pesquisa e desenvolvimento de soluções
+              tecnológicas para o setor automotivo.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EMPRESA -->
+
+    <section class="about" id="empresa">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-box">
+
+            <h3>
+              GHOST
+            </h3>
+
+            <p class="tech">
+              SOLUÇÕES AUTOMOTIVAS
+            </p>
+
+            <br>
+
+            <p>
+              Tecnologia, engenharia e inovação
+              aplicadas ao universo automotivo.
+            </p>
+
+            <br>
+
+            <strong>
+              🇧🇷 Desenvolvendo soluções no Brasil.
+            </strong>
+
+          </div>
+
+
+          <div class="about-text">
+
+            <h2>
+              Mais tecnologia.
+              Mais possibilidades.
+            </h2>
+
+            <p>
+              A GHOST Soluções Automotivas atua no
+              desenvolvimento e fabricação de materiais
+              elétricos e eletrônicos para veículos.
+            </p>
+
+            <p>
+              A empresa também trabalha com acessórios,
+              peças e serviços de instalação e manutenção,
+              oferecendo soluções para diferentes
+              necessidades automotivas.
+            </p>
+
+
+            <div class="values">
+
+              <div class="value">
+                ✓ Tecnologia
+              </div>
+
+              <div class="value">
+                ✓ Inovação
+              </div>
+
+              <div class="value">
+                ✓ Qualidade
+              </div>
+
+              <div class="value">
+                ✓ Desenvolvimento
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TECNOLOGIA -->
+
+    <section class="technology" id="tecnologia">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <span>
+            Diferenciais
+          </span>
+
+          <h2>
+            Tecnologia Automotiva
+          </h2>
+
+          <p>
+            Soluções pensadas para acompanhar
+            a evolução dos veículos.
+          </p>
+
+        </div>
+
+
+        <div class="tech-grid">
+
+          <div class="tech-card">
+
+            <strong>
+              INOVAÇÃO
+            </strong>
+
+            <p>
+              Desenvolvimento de produtos
+              voltados para as novas demandas
+              do mercado automotivo.
+            </p>
+
+          </div>
+
+
+          <div class="tech-card">
+
+            <strong>
+              ELETRÔNICA
+            </strong>
+
+            <p>
+              Equipamentos e soluções eletrônicas
+              desenvolvidos para aplicações
+              automotivas.
+            </p>
+
+          </div>
+
+
+          <div class="tech-card">
+
+            <strong>
+              DESIGN
+            </strong>
+
+            <p>
+              Produtos pensados para unir
+              funcionalidade, tecnologia e
+              experiência do usuário.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+      <div class="container">
+
+        <h2>
+          Quer conhecer nossas
+          <span>soluções?</span>
+        </h2>
+
+        <p>
+          Entre em contato com a GHOST e
+          conheça nossos produtos e serviços
+          automotivos.
+        </p>
+
+        <a
+          href="https://wa.me/5567992629793"
+          target="_blank"
+          class="btn btn-primary"
+        >
+          Falar no WhatsApp
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTATO -->
+
+    <section class="contact" id="contato">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <span>
+            Fale conosco
+          </span>
+
+          <h2>
+            Entre em contato
+          </h2>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+          <div class="contact-card">
+
+            <div class="icon">
+              📍
+            </div>
+
+            <h3>
+              Endereço
+            </h3>
+
+            <p>
+              Rua dos Estudantes, 342<br>
+              Jardim Itatiaia<br>
+              Campo Grande - MS<br>
+              CEP 79042-510
+            </p>
+
+          </div>
+
+
+          <div class="contact-card">
+
+            <div class="icon">
+              📱
+            </div>
+
+            <h3>
+              WhatsApp
+            </h3>
+
+            <p>
+              (67) 99262-9793
+            </p>
+
+            <br>
+
+            <a
+              href="https://wa.me/5567992629793"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              WhatsApp
+            </a>
+
+          </div>
+
+
+          <div class="contact-card">
+
+            <div class="icon">
+              🏢
+            </div>
+
+            <h3>
+              CNPJ
+            </h3>
+
+            <p>
+              60.854.462/0001-06
+            </p>
+
+            <br>
+
+            <strong>
+              GHOST Soluções Automotivas LTDA
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-content">
+
+      <div class="footer-brand">
+
+        <h3>
+          GHOST SOLUÇÕES AUTOMOTIVAS
+        </h3>
+
+        <p>
+          Tecnologia, eletrônica e inovação
+          para o mercado automotivo.
+        </p>
+
+      </div>
+
+
+      <div class="footer-info">
+
+        <strong>
+          GHOST Soluções Automotivas LTDA
+        </strong>
+
+        <br>
+
+        CNPJ: 60.854.462/0001-06
+
+        <br>
+
+        Campo Grande - MS
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+      © 2026 GHOST Soluções Automotivas LTDA.
+      Todos os direitos reservados.
+
+    </div>
+
+  </footer>
+
+
+  <!-- WHATSAPP -->
+
+  <a
+    href="https://wa.me/5567992629793"
+    target="_blank"
+    class="whatsapp"
+    aria-label="Falar com a GHOST pelo WhatsApp"
+  >
+    ☎
+  </a>
+
+</body>
+</html>
